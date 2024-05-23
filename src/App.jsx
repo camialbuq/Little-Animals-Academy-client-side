@@ -1,15 +1,15 @@
-import { useState } from "react";
-import "./App.css";
-import { Routes, Route, Navigate } from "react-router-dom";
-import Navbar from "./components/Navbar";
-import Sidebar from "./components/Sidebar";
-import Footer from "./components/Footer";
-import Home from "./pages/Home";
-import UserProfile from "./pages/UserProfile";
-import Games from "./pages/Games";
-import Memory from "./pages/Memory";
-import Alphabet from "./pages/Alphabet";
-import Math from "./pages/Math";
+import { useState } from "react"
+import "./App.css"
+import { Routes, Route, Navigate } from "react-router-dom"
+import Navbar from "./components/Navbar"
+import Sidebar from "./components/Sidebar"
+import Footer from "./components/Footer"
+import Home from "./pages/Home"
+import UserProfile from "./pages/UserProfile"
+import Games from "./pages/Games"
+import Memory from "./pages/Memory"
+import Alphabet from "./pages/Alphabet"
+import Math from "./pages/Math"
 // import CohortListPage from "./pages/CohortListPage";
 // import CohortDetailsPage from "./pages/CohortDetailsPage";
 // import CohortEditPage from "./pages/CohortEditPage";
@@ -25,28 +25,28 @@ import Math from "./pages/Math";
 // import IsAnon from "./components/IsAnon";
 
 function App() {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+    const [isSidebarOpen, setIsSidebarOpen] = useState(false)
 
-  return (
-    <div className="App relative z-20 pt-20">
-      <Navbar toggleSidebar={() => setIsSidebarOpen(!isSidebarOpen)} />
-      {isSidebarOpen && <Sidebar />}
-      <div
-        className={`content ${isSidebarOpen ? "shifted" : ""} relative z-10`}
-      >
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/signup" element={<Home />} />
-          {/* but with signup popup */}
-          <Route path="/login" element={<Home />} />
-          {/* but with login popup */}
-          <Route path="/profile" element={<UserProfile />} />
-          <Route path="/games" element={<Games />} />
-          <Route path="/games/memory" element={<Memory />} />
-          <Route path="/games/alphabet" element={<Alphabet />} />
-          <Route path="/games/math" element={<Math />} />
-        </Routes>
-        {/* <Routes>
+    return (
+        <div className="App relative z-20 pt-16">
+            <Navbar toggleSidebar={() => setIsSidebarOpen(!isSidebarOpen)} />
+            {isSidebarOpen && <Sidebar />}
+            <div
+                className={`content ${isSidebarOpen ? "shifted" : ""} relative z-10`}
+            >
+                <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/signup" element={<Home />} />
+                    {/* but with signup popup */}
+                    <Route path="/login" element={<Home />} />
+                    {/* but with login popup */}
+                    <Route path="/profile" element={<UserProfile />} />
+                    <Route path="/games" element={<Games />} />
+                    <Route path="/games/memory" element={<Memory />} />
+                    <Route path="/games/alphabet" element={<Alphabet />} />
+                    <Route path="/games/math" element={<Math />} />
+                </Routes>
+                {/* <Routes>
           <Route path="/" element={<Navigate to="/dashboard" />} />
           <Route path="/dashboard" element={<CohortListPage />} />
           <Route path="/students" element={<StudentListPage />} />
@@ -59,10 +59,10 @@ function App() {
           <Route path="/login" element={<IsAnon><LoginPage /></IsAnon>} />
           <Route path="/signup" element={<IsAnon><SignupPage /></IsAnon>} />
         </Routes> */}
-        <Footer />
-      </div>
-    </div>
-  );
+                <Footer />
+            </div>
+        </div>
+    )
 }
 
-export default App;
+export default App

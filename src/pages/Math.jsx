@@ -1,7 +1,7 @@
-import React from "react";
+import React from "react"
 
 function Math() {
-  return <div className="mt-10 bg-slate-500">Math</div>;
+    return <div className="mt-10 bg-slate-500">Math</div>
 }
 
-export default Math;
+export default Math
