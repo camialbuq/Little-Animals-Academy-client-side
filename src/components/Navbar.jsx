@@ -1,5 +1,5 @@
 import React from "react"
-// import logo from "./../assets/logo-ironhack-blue.png";
+import logo from "../assets/abclogo.png"
 
 function Navbar({ toggleSidebar }) {
     return (
@@ -11,15 +11,21 @@ function Navbar({ toggleSidebar }) {
                 {/* Left flex container for burger icon and text */}
                 <div className="flex w-full items-center space-x-4">
                     <button
-                        className="flex items-center py-1 text-4xl"
+                        className=" flex items-center py-1 text-4xl"
                         onClick={toggleSidebar}
                     >
                         ☰
                     </button>
+
                     <span className="flex items-center px-4 text-2xl text-white">
                         {" "}
                         Little Animals Academy
                     </span>
+                    {/* <img
+                        className="ml-4 h-12 w-auto"
+                        src={logo}
+                        alt="abclogo"
+                    /> */}
                 </div>
                 {/* Center flex container for logo */}
                 {/* <div className="flex w-1">
