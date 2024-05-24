@@ -1,7 +1,10 @@
 import React from "react"
 import logo from "../assets/abclogo.png"
+import { useNavigate } from "react-router-dom"
 
 function SignUpForm() {
+    const navigate = useNavigate()
+
     return (
         <form noValidate="" action="" className="Form w-1/2">
             <div className="min-h-1/2 flex w-full flex-col justify-center bg-gray-100 px-6 py-12 lg:px-8">
@@ -17,7 +20,7 @@ function SignUpForm() {
                     <p className="max-w mt-2 text-center text-sm text-gray-600">
                         Already registered? {""}
                         <a
-                            href="#"
+                            href="/login"
                             className="font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500"
                         >
                             Login
@@ -97,6 +100,12 @@ function SignUpForm() {
                             </div>
                         </form>
                     </div>
+                    <button
+                        onClick={() => navigate("/")}
+                        className="mt-10 active:underline active:underline-offset-4 sm:mx-auto sm:w-full sm:max-w-md"
+                    >
+                        Close
+                    </button>
                 </div>
             </div>
         </form>

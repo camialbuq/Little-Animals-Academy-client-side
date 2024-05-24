@@ -1,6 +1,9 @@
 import React from "react"
+import { useNavigate } from "react-router-dom"
+import logo from "../assets/abclogo.png"
 
 function LoginForm() {
+    const navigate = useNavigate()
     return (
         <form noValidate="" action="" className="Form w-1/2">
             <div className="min-h-1/2 flex w-full flex-col justify-center bg-gray-100 px-6 py-12 lg:px-8">
@@ -11,15 +14,15 @@ function LoginForm() {
                         alt="Workflow"
                     />
                     <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
-                        Create your account
+                        Login to start playing!
                     </h2>
                     <p className="max-w mt-2 text-center text-sm text-gray-600">
-                        Already registered? {""}
+                        Not registered yet? {""}
                         <a
-                            href="#"
+                            href="/signup"
                             className="font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500"
                         >
-                            Sign in
+                            Sign up
                         </a>
                     </p>
                 </div>
@@ -77,6 +80,12 @@ function LoginForm() {
                             </div>
                         </form>
                     </div>
+                    <button
+                        onClick={() => navigate("/")}
+                        className="mt-10 active:underline active:underline-offset-4 sm:mx-auto sm:w-full sm:max-w-md"
+                    >
+                        Close
+                    </button>
                 </div>
             </div>
         </form>

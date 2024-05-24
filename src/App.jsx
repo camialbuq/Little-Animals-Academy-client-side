@@ -10,16 +10,6 @@ import Games from "./pages/Games"
 import Memory from "./pages/Memory"
 import Alphabet from "./pages/Alphabet"
 import Math from "./pages/Math"
-// import CohortListPage from "./pages/CohortListPage";
-// import CohortDetailsPage from "./pages/CohortDetailsPage";
-// import CohortEditPage from "./pages/CohortEditPage";
-// import CohortCreatePage from "./pages/CohortCreatePage";
-// import StudentListPage from "./pages/StudentListPage";
-// import StudentDetailsPage from "./pages/StudentDetailsPage";
-// import StudentEditPage from "./pages/StudentEditPage";
-// import UserProfilePage from "./pages/UserProfilePage";
-// import LoginPage from "./pages/LoginPage";
-// import SignupPage from "./pages/SignupPage";
 
 // import IsPrivate from "./components/IsPrivate";
 // import IsAnon from "./components/IsAnon";
@@ -36,10 +26,10 @@ function App() {
             >
                 <Routes>
                     <Route path="/" element={<Home />} />
-                    <Route path="/signup" element={<Home />} />
-                    {/* but with signup popup */}
-                    <Route path="/login" element={<Home />} />
-                    {/* but with login popup */}
+                    <Route path="/signup" element={<Home signUp={true} />} />
+                    {/*with signup popup open */}
+                    <Route path="/login" element={<Home login={true} />} />
+                    {/*with login popup open*/}
                     <Route path="/profile" element={<UserProfile />} />
                     <Route path="/games" element={<Games />} />
                     <Route path="/games/memory" element={<Memory />} />

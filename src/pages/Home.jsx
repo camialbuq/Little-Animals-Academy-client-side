@@ -1,12 +1,16 @@
 import React from "react"
 import Modal from "react-modal"
 import { useState } from "react"
+import { useNavigate } from "react-router-dom"
 import AnimalsImageHome from "../components/AnimalsImageHome"
 import backgroundImage from "../assets/background.png"
 import SignUpForm from "../components/SignUpForm"
+import LoginForm from "../components/LoginForm"
 
-function Home() {
-    const [visible, setVisible] = useState(false)
+function Home({ signUp, login }) {
+    const [signUpVisible, setSignUpVisible] = useState(signUp)
+    const [loginVisible, setLoginVisible] = useState(login)
+    const navigate = useNavigate()
 
     return (
         <section
@@ -34,19 +38,28 @@ function Home() {
                 </p>
                 <div className="flex flex-col flex-wrap justify-center">
                     <button
-                        onClick={() => setVisible(true)}
+                        onClick={() => navigate("/signup")}
                         className="mb-8 rounded bg-green-500 px-10 py-4 text-lg font-semibold text-white"
                     >
                         Get started
                     </button>
                     <Modal
-                        isOpen={visible}
-                        onRequestClose={() => setVisible(false)}
+                        isOpen={signUp}
+                        onRequestClose={() => setSignUpVisible(false)}
                         ariaHideApp={false}
                         className="signUpmodal fixed inset-1 flex items-center justify-center"
                         overlayClassName="fixed inset-0 bg-black bg-opacity-50 cursor-pointer z-50"
                     >
                         <SignUpForm />
+                    </Modal>
+                    <Modal
+                        isOpen={login}
+                        onRequestClose={() => setLoginVisible(false)}
+                        ariaHideApp={false}
+                        className="signUpmodal fixed inset-1 flex items-center justify-center"
+                        overlayClassName="fixed inset-0 bg-black bg-opacity-50 cursor-pointer z-50"
+                    >
+                        <LoginForm />
                     </Modal>
                 </div>
             </div>
