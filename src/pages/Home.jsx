@@ -25,16 +25,16 @@ function Home() {
                     {""} with the fun animal friends!
                 </h1>
                 <p
-                    className="mb-8 mt-8 px-8 text-lg"
+                    className="z-50 mb-8 mt-8 px-8 text-lg"
                     style={{ color: "#032c2d" }}
                 >
                     Help your little one to learn, improve cognition and develop
                     writting skills using simple daily games.
                 </p>
-                <div className="flex flex-wrap justify-center">
+                <div className="flex flex-col flex-wrap justify-center">
                     <button
                         onClick={() => setVisible(true)}
-                        className="mb-16 rounded bg-green-500 px-10 py-4 text-lg font-semibold text-white"
+                        className="mb-8 rounded bg-green-500 px-10 py-4 text-lg font-semibold text-white"
                     >
                         Get started
                     </button>
@@ -42,7 +42,7 @@ function Home() {
                         isOpen={visible}
                         onRequestClose={() => setVisible(false)}
                         ariaHideApp={false}
-                        className="fixed inset-2 flex items-center justify-center"
+                        className="signUpmodal fixed inset-2 flex items-center justify-center"
                         overlayClassName="fixed inset-0 bg-black bg-opacity-50 cursor-pointer z-50"
                     >
                         <form noValidate="" action="" className="">
