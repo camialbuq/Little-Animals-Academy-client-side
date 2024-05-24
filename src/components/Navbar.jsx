@@ -1,12 +1,11 @@
 import React from "react"
-import logo from "../assets/abclogo.png"
+import { useNavigate } from "react-router-dom"
 
 function Navbar({ toggleSidebar }) {
+    const navigate = useNavigate()
+
     return (
-        <nav
-            className="fixed left-0 top-0 z-50 w-full text-white shadow-md"
-            style={{ backgroundColor: "#015255" }}
-        >
+        <nav className="fixed left-0 top-0 z-50 w-full bg-customGreen text-white shadow-md">
             <div className="flex h-16 w-full justify-between px-4">
                 {/* Left flex container for burger icon and text */}
                 <div className="flex w-full items-center space-x-4">
@@ -17,10 +16,13 @@ function Navbar({ toggleSidebar }) {
                         ☰
                     </button>
 
-                    <span className="flex items-center px-4 text-2xl text-white">
+                    <button
+                        className="flex items-center px-4 text-2xl text-white"
+                        onClick={() => navigate("/")}
+                    >
                         {" "}
                         Little Animals Academy
-                    </span>
+                    </button>
                     {/* <img
                         className="ml-4 h-12 w-auto"
                         src={logo}

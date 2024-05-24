@@ -8,6 +8,11 @@ export default {
                 "bounce-medium": "bounce 2s ease-in-out 5",
                 "bounce-long": "bounce 3s ease-in-out 5",
             },
+            colors: {
+                customGreen: "#015255",
+                customDarkGreen: "#032c2d",
+                customOrange: "#ff7245",
+            },
         },
     },
     plugins: [],

@@ -19,20 +19,14 @@ function Home({ signUp, login }) {
         >
             <div className="container mx-auto flex h-full flex-col items-center overflow-hidden px-4 pt-10 text-center md:px-10 md:pb-36 md:pt-24 lg:px-20 xl:max-w-3xl">
                 <AnimalsImageHome />
-                <h1
-                    className="text-4xl font-bold leading-none sm:text-5xl"
-                    style={{ color: "#032c2d" }}
-                >
+                <h1 className="text-customDarkGreen text-4xl font-bold leading-none sm:text-5xl">
                     Play to learn the {""}
                     <span className="dark:text-green-600">
                         alphabet, exercise your memory and start to count
                     </span>
                     {""} with the fun animal friends!
                 </h1>
-                <p
-                    className="z-50 mb-8 mt-8 px-8 text-lg"
-                    style={{ color: "#032c2d" }}
-                >
+                <p className="text-customDarkGreen z-50 mb-8 mt-8 px-8 text-lg">
                     Help your little one to learn, improve cognition and develop
                     writting skills using simple daily games.
                 </p>
