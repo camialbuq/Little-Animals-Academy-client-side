@@ -6,10 +6,8 @@ import axios from "axios"
 
 function LoginForm() {
     const navigate = useNavigate()
-    const [name, setName] = useState("")
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
-    const [messageSuccess, setMessageSucess] = useState("")
     const [messageError, setMessageError] = useState("")
 
     const handleSubmit = (e) => {
