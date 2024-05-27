@@ -18,7 +18,7 @@ function App() {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false)
 
     return (
-        <div className="App relative z-20 pt-16">
+        <div className="App relative z-20">
             <Navbar toggleSidebar={() => setIsSidebarOpen(!isSidebarOpen)} />
             {isSidebarOpen && <Sidebar />}
             <div

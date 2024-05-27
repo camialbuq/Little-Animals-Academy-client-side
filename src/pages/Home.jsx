@@ -16,7 +16,7 @@ function Home({ signUp, login }) {
     return (
         <div className="HomeContent">
             <section
-                className="HeroBanner border-box relative border-b-8 border-b-green-500 bg-cover bg-center dark:bg-gray-100"
+                className="HeroBanner border-box relative border-y-8 border-y-green-500 bg-cover bg-center dark:bg-gray-100"
                 style={{ backgroundImage: `url(${backgroundImage})` }}
             >
                 <div className="container mx-auto flex h-full flex-col items-center overflow-hidden px-4 pt-10 text-center md:px-10 md:pb-36 md:pt-24 lg:px-20 xl:max-w-3xl">
@@ -28,14 +28,14 @@ function Home({ signUp, login }) {
                         </span>
                         {""} with the fun animal friends!
                     </h1>
-                    <p className="z-50 mb-8 mt-8 px-8 text-lg text-customDarkGreen">
+                    <p className="z-50 mb-8 mt-8 px-8 text-lg text-customDarkGreen lg:text-xl">
                         Help your little one to learn, improve cognition and
                         develop writting skills using simple daily games.
                     </p>
                     <div className="flex flex-col flex-wrap justify-center">
                         <button
                             onClick={() => navigate("/signup")}
-                            className="mb-8 rounded bg-green-500 px-10 py-4 text-lg font-semibold text-white"
+                            className="mb-8 rounded bg-orange-500 px-10 py-4 text-lg font-semibold text-white hover:-translate-y-3 hover:rotate-3 hover:scale-110 lg:text-2xl"
                         >
                             Get started
                         </button>
