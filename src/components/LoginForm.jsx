@@ -1,14 +1,17 @@
-import React from "react"
+import React, { useContext } from "react"
 import logo from "../assets/abclogo.png"
 import { useNavigate } from "react-router-dom"
 import { useState } from "react"
 import axios from "axios"
+import { AuthContext } from "../context/auth.context"
 
 function LoginForm() {
     const navigate = useNavigate()
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const [messageError, setMessageError] = useState("")
+    const [messageSuccess, setMessageSuccess] = useState("")
+    const { storeToken } = useContext(AuthContext)
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -21,14 +24,15 @@ function LoginForm() {
                         password,
                     },
                 )
+                storeToken(response.data.authToken)
+                navigate("/games")
                 if (response.status === 200) {
                     console.log(response.message)
-
-                    setMessageSucess(response.data.message)
+                    console.log(response)
+                    setMessageSuccess(response.data.message)
                 }
                 if (response.status === 500) {
                     console.log(response.message)
-
                     setMessageError(response.data.message)
                 }
                 console.log(response)
@@ -122,7 +126,7 @@ function LoginForm() {
                             <div>
                                 <button
                                     type="submit"
-                                    onClick={() => navigate("/games")}
+                                    // onClick={() => navigate("/games")}
                                     className="flex w-full justify-center rounded-md border border-transparent bg-green-500 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                                 >
                                     Login

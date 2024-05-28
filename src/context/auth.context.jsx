@@ -10,10 +10,17 @@ function AuthProviderWrapper(props) {
     const [isLoading, setIsLoading] = useState(true)
     const [user, setUser] = useState(null)
     const [authError, setAuthError] = useState(null)
+    const [token, setToken] = useState()
 
     const storeToken = (token) => {
         localStorage.setItem("authToken", token)
     }
+    // useEffect(
+    //     (token) => {
+    //         localStorage.setItem("authToken", token)
+    //     },
+    //     [setToken],
+    // )
 
     const authenticateUser = () => {
         // Get the stored token from the localStorage

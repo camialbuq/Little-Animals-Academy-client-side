@@ -1,40 +1,55 @@
 import React from "react"
-import { useNavigate } from "react-router-dom"
+import { useContext } from "react"
+import { AuthContext } from "../context/auth.context"
+import { Link } from "react-router-dom"
 
-function Navbar({ toggleSidebar }) {
-    const navigate = useNavigate()
+function Navbar() {
+    const { isLoggedIn } = useContext(AuthContext)
+
+    const handleLogout = () => {
+        localStorage.removeItem("authToken")
+        navigate("/")
+    }
 
     return (
-        <nav className="fixed left-0 top-0 z-50 w-full bg-customGreen text-white shadow-md">
-            <div className="flex h-16 w-full justify-between px-4">
-                {/* Left flex container for burger icon and text */}
-                <div className="flex w-full items-center space-x-4">
-                    <button
-                        className=" flex items-center py-1 text-4xl"
-                        onClick={toggleSidebar}
-                    >
-                        ☰
-                    </button>
-
-                    <button
-                        className="flex items-center px-4 text-2xl text-white"
-                        onClick={() => navigate("/")}
-                    >
-                        {" "}
+        <div className="navbar">
+            <header className="mx-auto flex max-w-full flex-col items-center justify-between bg-customDarkGreen px-2 py-4 md:flex-row md:px-6">
+                <Link to="/" className="active z-10">
+                    <h1 className="text-2xl font-extrabold text-white active:text-customGreen">
                         Little Animals Academy
-                    </button>
-                    {/* <img
-                        className="ml-4 h-12 w-auto"
-                        src={logo}
-                        alt="abclogo"
-                    /> */}
-                </div>
-                {/* Center flex container for logo */}
-                {/* <div className="flex w-1">
-          <img src={logo} alt="Logo" className="h-8 w-auto" />
-        </div> */}
-            </div>
-        </nav>
+                    </h1>
+                </Link>
+                <nav className="z-10">
+                    <ul className="flex flex-row items-center rounded-lg bg-green-500 px-6 py-4 text-indigo-100">
+                        <li className="mx-4 hover:-translate-y-2 hover:rotate-3 hover:scale-110 hover:text-customDarkGreen">
+                            <Link to="/" className="font-bold">
+                                Home
+                            </Link>
+                        </li>
+                        <li className="mx-4 hover:-translate-y-2 hover:-rotate-3 hover:scale-110 hover:text-customDarkGreen">
+                            <Link to="/profile" className="font-bold">
+                                Profile
+                            </Link>
+                        </li>
+                        <li className="mx-4 hover:-translate-y-2 hover:rotate-3 hover:scale-110 hover:text-customDarkGreen">
+                            <Link to="/games" className="font-bold">
+                                Games
+                            </Link>
+                        </li>
+                        {isLoggedIn && (
+                            <li className="mx-4 hover:-translate-y-2 hover:-rotate-3 hover:scale-110 hover:text-customDarkGreen">
+                                <button
+                                    onClick={handleLogout}
+                                    className="font-bold"
+                                >
+                                    Logout
+                                </button>
+                            </li>
+                        )}
+                    </ul>
+                </nav>
+            </header>
+        </div>
     )
 }
 
