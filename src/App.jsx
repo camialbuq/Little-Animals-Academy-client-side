@@ -64,19 +64,6 @@ function App() {
                         }
                     />
                 </Routes>
-                {/* <Routes>
-          <Route path="/" element={<Navigate to="/dashboard" />} />
-          <Route path="/dashboard" element={<CohortListPage />} />
-          <Route path="/students" element={<StudentListPage />} />
-          <Route path="/cohorts/details/:cohortId" element={<CohortDetailsPage />} />
-          <Route path="/cohorts/edit/:cohortId" element={<CohortEditPage />} />
-          <Route path="/cohorts/create" element={<CohortCreatePage />} />
-          <Route path="/students/details/:studentId" element={<StudentDetailsPage />} />
-          <Route path="/students/edit/:studentId" element={<StudentEditPage />} />
-          <Route path="/profile" element={ <IsPrivate><UserProfilePage /></IsPrivate>} />
-          <Route path="/login" element={<IsAnon><LoginPage /></IsAnon>} />
-          <Route path="/signup" element={<IsAnon><SignupPage /></IsAnon>} />
-        </Routes> */}
                 <Footer />
             </div>
         </div>

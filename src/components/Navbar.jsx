@@ -21,26 +21,26 @@ function Navbar() {
                 </Link>
                 <nav className="z-10">
                     <ul className="flex flex-row items-center rounded-lg bg-green-500 px-6 py-4 text-indigo-100">
-                        <li className="mx-4 hover:-translate-y-2 hover:rotate-3 hover:scale-110">
+                        <li className="mx-4 hover:-translate-y-2 hover:rotate-3 hover:scale-110 hover:text-customDarkGreen">
                             <Link to="/" className="font-bold">
                                 Home
                             </Link>
                         </li>
-                        <li className="mx-4 hover:-translate-y-2 hover:-rotate-3 hover:scale-110">
+                        <li className="mx-4 hover:-translate-y-2 hover:-rotate-3 hover:scale-110 hover:text-customDarkGreen">
                             <Link to="/profile" className="font-bold">
                                 Profile
                             </Link>
                         </li>
-                        <li className="mx-4 hover:-translate-y-2 hover:rotate-3 hover:scale-110">
+                        <li className="mx-4 hover:-translate-y-2 hover:rotate-3 hover:scale-110 hover:text-customDarkGreen">
                             <Link to="/games" className="font-bold">
                                 Games
                             </Link>
                         </li>
                         {isLoggedIn && (
-                            <li className="hover:-rotate-4 mx-4 hover:-translate-y-2 hover:scale-110">
+                            <li className="mx-4 hover:-translate-y-2 hover:-rotate-3 hover:scale-110 hover:text-customDarkGreen">
                                 <button
                                     onClick={handleLogout}
-                                    className="text-lg hover:animate-bounce hover:underline hover:decoration-blue-700 hover:underline-offset-4 active:underline active:decoration-blue-600  active:underline-offset-4"
+                                    className="font-bold"
                                 >
                                     Logout
                                 </button>
