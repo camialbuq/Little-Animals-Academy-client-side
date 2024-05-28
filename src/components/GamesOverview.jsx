@@ -23,7 +23,7 @@ function GamesOverview() {
                             />
 
                             <div className="absolute bottom-20 left-0 right-0 flex items-center justify-center bg-gradient-to-b from-gray-50 to-white p-4 text-white">
-                                <h2 className="self-center text-xl font-bold text-customDarkGreen">
+                                <h2 className="self-center text-xl font-bold text-indigo-700">
                                     Memory Game
                                 </h2>
                             </div>
@@ -44,7 +44,7 @@ function GamesOverview() {
                             />
 
                             <div className="absolute bottom-20 left-0 right-0 flex items-center justify-center bg-gradient-to-b from-gray-50 to-white p-4 text-white">
-                                <h2 className="self-center text-xl font-bold text-customDarkGreen">
+                                <h2 className="self-center text-xl font-bold text-indigo-700">
                                     Monkey Math
                                 </h2>
                             </div>
@@ -65,7 +65,7 @@ function GamesOverview() {
                             />
 
                             <div className="absolute bottom-20 left-0 right-0 flex items-center justify-center bg-gradient-to-b from-gray-50 to-white p-4 text-white">
-                                <h2 className="self-center text-xl font-bold text-customDarkGreen">
+                                <h2 className="self-center text-xl font-bold text-indigo-700">
                                     Animal Alphabet
                                 </h2>
                             </div>

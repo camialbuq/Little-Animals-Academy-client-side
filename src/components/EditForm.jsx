@@ -9,6 +9,7 @@ function EditForm() {
     const navigate = useNavigate()
     const [name, setName] = useState("")
     const [playerName, setPlayerName] = useState("")
+    const [image, setImage] = useState("")
     const [messageError, setMessageError] = useState("")
     const [messageSuccess, setMessageSuccess] = useState("")
     const { storeToken } = useContext(AuthContext)
@@ -42,6 +43,28 @@ function EditForm() {
             }
         }
         putData()
+    }
+
+    const deleteAccount = async () => {
+        try {
+            const response = await axios.delete(
+                "http://localhost:5005/api/users/:id",
+            )
+            storeToken(response.data.authToken)
+            navigate("/")
+            if (response.status === 200) {
+                console.log(response.message)
+                console.log(response)
+                setMessageSuccess(response.data.message)
+            }
+            if (response.status === 500) {
+                console.log(response.message)
+                setMessageError(response.data.message)
+            }
+            console.log(response)
+        } catch (error) {
+            console.log(error)
+        }
     }
 
     return (
@@ -85,7 +108,6 @@ function EditForm() {
                                         type="text"
                                         placeholder="name"
                                         autoComplete="name"
-                                        required
                                         className="mb-4 w-full rounded-md border-2 border-blue-600 px-4 py-2 focus:ring dark:border-gray-300 focus:dark:ring-indigo-600"
                                     />
                                 </div>
@@ -110,16 +132,33 @@ function EditForm() {
                                         type="text"
                                         placeholder="Your little animal name"
                                         autoComplete="playerName"
-                                        required
                                         className="mb-4 w-full rounded-md border-2 border-blue-600 px-4 py-2 focus:ring dark:border-gray-300 focus:dark:ring-indigo-600"
                                     />
                                 </div>
                             </div>
 
-                            <div className="mt-1">
-                                <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
-                                    Choose your image avatar example goes here
-                                </h2>
+                            <div>
+                                <label
+                                    htmlFor="image"
+                                    className="block text-sm font-medium text-gray-700"
+                                >
+                                    Choose your animal image
+                                </label>
+                                <div className="mt-1">
+                                    <input
+                                        id="image"
+                                        value={image}
+                                        onChange={(e) => {
+                                            console.log(e.target.value)
+                                            setImage(e.target.value)
+                                        }}
+                                        name="playerName"
+                                        type="text"
+                                        placeholder="Your image URL"
+                                        autoComplete="playerName"
+                                        className="mb-4 w-full rounded-md border-2 border-blue-600 px-4 py-2 focus:ring dark:border-gray-300 focus:dark:ring-indigo-600"
+                                    />
+                                </div>
                             </div>
 
                             <div>
@@ -148,6 +187,13 @@ function EditForm() {
                             </div>
                         )}
                     </div>
+
+                    <button
+                        onClick={() => deleteAccount()}
+                        className="mt-4 active:underline active:underline-offset-4 sm:mx-auto sm:w-full sm:max-w-md"
+                    >
+                        Delete your user account :(
+                    </button>
 
                     <button
                         onClick={() => navigate("/")}

@@ -8,7 +8,7 @@ function Footer() {
             <span>
                 <Link
                     to="https://github.com/camialbuq/LAA-client-side"
-                    className="mx-2 font-bold text-customDarkGreen hover:-translate-y-3 hover:rotate-3 hover:scale-110"
+                    className="mx-2 font-bold text-indigo-700 hover:-translate-y-3 hover:rotate-3 hover:scale-110"
                 >
                     Git Hub repository
                 </Link>

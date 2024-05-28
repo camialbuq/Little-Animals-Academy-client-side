@@ -38,6 +38,13 @@ function Navbar() {
                                 Games
                             </Link>
                         </li>
+                        {!isLoggedIn && (
+                            <li className="mx-4 hover:-translate-y-2 hover:-rotate-3 hover:scale-110 hover:text-customDarkGreen">
+                                <Link to="/login" className="font-bold">
+                                    Login
+                                </Link>
+                            </li>
+                        )}
                         {isLoggedIn && (
                             <li className="mx-4 hover:-translate-y-2 hover:-rotate-3 hover:scale-110 hover:text-customDarkGreen">
                                 <button
