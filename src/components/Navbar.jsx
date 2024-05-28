@@ -2,9 +2,11 @@ import React from "react"
 import { useContext } from "react"
 import { AuthContext } from "../context/auth.context"
 import { Link } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 
 function Navbar() {
     const { isLoggedIn } = useContext(AuthContext)
+    const navigate = useNavigate()
 
     const handleLogout = () => {
         localStorage.removeItem("authToken")

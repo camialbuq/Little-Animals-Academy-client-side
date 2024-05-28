@@ -5,26 +5,33 @@ import { useState } from "react"
 import axios from "axios"
 import { AuthContext } from "../context/auth.context"
 
-function LoginForm() {
+function EditForm() {
     const navigate = useNavigate()
-    const [email, setEmail] = useState("")
-    const [password, setPassword] = useState("")
+    const [name, setName] = useState("")
+    const [playerName, setPlayerName] = useState("")
     const [messageError, setMessageError] = useState("")
+    const [messageSuccess, setMessageSuccess] = useState("")
     const { storeToken } = useContext(AuthContext)
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        const postData = async () => {
+        const putData = async () => {
             try {
-                const response = await axios.post(
-                    "http://localhost:5005/auth/login",
+                const response = await axios.put(
+                    "http://localhost:5005/api/users/:id",
                     {
-                        email,
-                        password,
+                        name,
+                        image,
+                        playerName,
                     },
                 )
                 storeToken(response.data.authToken)
-                navigate("/games")
+                navigate("/profile")
+                if (response.status === 200) {
+                    console.log(response.message)
+                    console.log(response)
+                    setMessageSuccess(response.data.message)
+                }
                 if (response.status === 500) {
                     console.log(response.message)
                     setMessageError(response.data.message)
@@ -34,7 +41,7 @@ function LoginForm() {
                 console.log(error)
             }
         }
-        postData()
+        putData()
     }
 
     return (
@@ -47,17 +54,8 @@ function LoginForm() {
                         alt="Workflow"
                     />
                     <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
-                        Login to start playing!
+                        Edit your user information
                     </h2>
-                    <p className="max-w mt-2 text-center text-sm text-gray-600">
-                        No account yet? {""}
-                        <a
-                            href="/login"
-                            className="font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                        >
-                            Sign Up
-                        </a>
-                    </p>
                 </div>
 
                 <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
@@ -70,23 +68,23 @@ function LoginForm() {
                         >
                             <div>
                                 <label
-                                    htmlFor="email"
+                                    htmlFor="name"
                                     className="block text-sm font-medium text-gray-700"
                                 >
-                                    Email
+                                    Name
                                 </label>
                                 <div className="mt-1">
                                     <input
-                                        id="email"
-                                        value={email}
+                                        id="name"
+                                        value={name}
                                         onChange={(e) => {
                                             console.log(e.target.value)
-                                            setEmail(e.target.value)
+                                            setName(e.target.value)
                                         }}
-                                        name="email"
-                                        type="email"
-                                        placeholder="email@littleanimals.com"
-                                        autoComplete="email"
+                                        name="name"
+                                        type="text"
+                                        placeholder="name"
+                                        autoComplete="name"
                                         required
                                         className="mb-4 w-full rounded-md border-2 border-blue-600 px-4 py-2 focus:ring dark:border-gray-300 focus:dark:ring-indigo-600"
                                     />
@@ -95,26 +93,33 @@ function LoginForm() {
 
                             <div>
                                 <label
-                                    htmlFor="password"
+                                    htmlFor="playerName"
                                     className="block text-sm font-medium text-gray-700"
                                 >
-                                    Password
+                                    Player's name
                                 </label>
                                 <div className="mt-1">
                                     <input
-                                        id="password"
-                                        value={password}
+                                        id="playerName"
+                                        value={playerName}
                                         onChange={(e) => {
-                                            setPassword(e.target.value)
+                                            console.log(e.target.value)
+                                            setPlayerName(e.target.value)
                                         }}
-                                        name="password"
-                                        type="password"
-                                        autoComplete="current-password"
-                                        placeholder="exampleNum&Letters123"
+                                        name="playerName"
+                                        type="text"
+                                        placeholder="Your little animal name"
+                                        autoComplete="playerName"
                                         required
                                         className="mb-4 w-full rounded-md border-2 border-blue-600 px-4 py-2 focus:ring dark:border-gray-300 focus:dark:ring-indigo-600"
                                     />
                                 </div>
+                            </div>
+
+                            <div className="mt-1">
+                                <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
+                                    Choose your image avatar example goes here
+                                </h2>
                             </div>
 
                             <div>
@@ -123,7 +128,7 @@ function LoginForm() {
                                     // onClick={() => navigate("/games")}
                                     className="flex w-full justify-center rounded-md border border-transparent bg-green-500 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                                 >
-                                    Login
+                                    Change
                                 </button>
                             </div>
                         </form>
@@ -132,6 +137,13 @@ function LoginForm() {
                             <div className="signUpSucess mt-4 flex flex-col items-center justify-center">
                                 <p className="text-base text-red-500">
                                     {messageError}, please try again.
+                                </p>
+                            </div>
+                        )}
+                        {messageSuccess && (
+                            <div className="signUpSucess mt-4 flex flex-col items-center justify-center">
+                                <p className="text-base text-red-500">
+                                    {messageSuccess}, changes were sucessful.
                                 </p>
                             </div>
                         )}
@@ -149,4 +161,4 @@ function LoginForm() {
     )
 }
 
-export default LoginForm
+export default EditForm
