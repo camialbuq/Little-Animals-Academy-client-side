@@ -9,6 +9,7 @@ function SignUpForm() {
     const [name, setName] = useState("")
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
+    const [playerName, setPlayerName] = useState("")
     const [messageSuccess, setMessageSucess] = useState("")
     const [messageError, setMessageError] = useState("")
 
@@ -22,6 +23,7 @@ function SignUpForm() {
                         name,
                         email,
                         password,
+                        playerName,
                     },
                 )
                 if (response.status === 200) {
@@ -66,7 +68,7 @@ function SignUpForm() {
                 </div>
 
                 <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
-                    <div className="rounded-lg bg-white px-6 py-8 shadow sm:px-10">
+                    <div className="rounded-lg bg-white px-6 py-6 shadow sm:px-10">
                         <form
                             className="mb-0 space-y-6"
                             action="#"
@@ -90,7 +92,7 @@ function SignUpForm() {
                                         }}
                                         name="name"
                                         type="text"
-                                        placeholder="Your name"
+                                        placeholder="name"
                                         autoComplete="name"
                                         required
                                         className="mb-4 w-full rounded-md border-2 border-blue-600 px-4 py-2 focus:ring dark:border-gray-300 focus:dark:ring-indigo-600"
@@ -145,7 +147,30 @@ function SignUpForm() {
                                     />
                                 </div>
                             </div>
-
+                            <div>
+                                <label
+                                    htmlFor="playerName"
+                                    className="block text-sm font-medium text-gray-700"
+                                >
+                                    Player's name
+                                </label>
+                                <div className="mt-1">
+                                    <input
+                                        id="playerName"
+                                        value={playerName}
+                                        onChange={(e) => {
+                                            console.log(e.target.value)
+                                            setPlayerName(e.target.value)
+                                        }}
+                                        name="playerName"
+                                        type="text"
+                                        placeholder="Your little animal name"
+                                        autoComplete="playerName"
+                                        required
+                                        className="mb-4 w-full rounded-md border-2 border-blue-600 px-4 py-2 focus:ring dark:border-gray-300 focus:dark:ring-indigo-600"
+                                    />
+                                </div>
+                            </div>
                             <div>
                                 <button
                                     type="submit"

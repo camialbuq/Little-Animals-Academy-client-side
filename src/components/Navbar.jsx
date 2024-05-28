@@ -2,9 +2,11 @@ import React from "react"
 import { useContext } from "react"
 import { AuthContext } from "../context/auth.context"
 import { Link } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 
 function Navbar() {
     const { isLoggedIn } = useContext(AuthContext)
+    const navigate = useNavigate()
 
     const handleLogout = () => {
         localStorage.removeItem("authToken")
@@ -36,6 +38,13 @@ function Navbar() {
                                 Games
                             </Link>
                         </li>
+                        {!isLoggedIn && (
+                            <li className="mx-4 hover:-translate-y-2 hover:-rotate-3 hover:scale-110 hover:text-customDarkGreen">
+                                <Link to="/login" className="font-bold">
+                                    Login
+                                </Link>
+                            </li>
+                        )}
                         {isLoggedIn && (
                             <li className="mx-4 hover:-translate-y-2 hover:-rotate-3 hover:scale-110 hover:text-customDarkGreen">
                                 <button
