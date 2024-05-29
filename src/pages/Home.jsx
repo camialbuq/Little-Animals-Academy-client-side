@@ -7,6 +7,7 @@ import backgroundImage from "../assets/background.png"
 import SignUpForm from "../components/SignUpForm"
 import LoginForm from "../components/LoginForm"
 import GamesOverview from "../components/GamesOverview"
+import About from "../components/About"
 
 function Home({ signUp, login }) {
     const [signUpVisible, setSignUpVisible] = useState(signUp)
@@ -61,6 +62,7 @@ function Home({ signUp, login }) {
                 </div>
             </section>
             <GamesOverview />
+            <About />
         </div>
     )
 }
