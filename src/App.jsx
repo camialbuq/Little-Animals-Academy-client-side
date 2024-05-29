@@ -18,12 +18,10 @@ function App() {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false)
 
     return (
-        <div className="App relative z-20">
+        <div className="App">
             <Navbar toggleSidebar={() => setIsSidebarOpen(!isSidebarOpen)} />
             {isSidebarOpen && <Sidebar />}
-            <div
-                className={`content ${isSidebarOpen ? "shifted" : ""} relative z-10`}
-            >
+            <div className={`content ${isSidebarOpen ? "shifted" : ""}`}>
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/signup" element={<Home signUp={true} />} />
