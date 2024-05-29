@@ -29,12 +29,55 @@ function Cards() {
             { id: 10, img: "../../public/memoryCards/j.png", stat: "" },
             { id: 10, img: "../../public/memoryCards/j.png", stat: "" },
         ].sort(() => Math.random() - 0.5),
-    ) //the sort needs -1 or 1 to sort , so we add - 0.5 to math.random to generate negative
+    ) //the sort needs -1 or 1 to sort array, so we add - 0.5 to math.random to generate negative
+
+    const [prevSelected, setPrevSelected] = useState(-1)
+    //because we haven't clicked any, id starts in -1, once we click it can be at least 0 index
+
+    function checkIfMatches(current) {
+        if (items[current].id === items[prevSelected].id) {
+            items[current].stat = "correct"
+            items[prevSelected].stat = "correct"
+            setItems([...items])
+            setPrevSelected(-1) //to restart the previous and user will click again
+        } else {
+            items[current].stat = "wrong"
+            items[prevSelected].stat = "wrong"
+            setItems([...items])
+            //clear the stat with setTimeout because it was wrong, cards flip back
+            setTimeout(() => {
+                items[current].stat = ""
+                items[prevSelected].stat = ""
+                setItems([...items])
+                setPrevSelected(-1)
+            }, 1000)
+        }
+    }
+
+    function handleClick(id) {
+        // alert(id) - to test
+        // items[id].stat = "active"
+        // setItems([...items])
+
+        if (prevSelected === -1) {
+            items[id].stat = "active"
+            setItems([...items])
+            setPrevSelected(id)
+        } else {
+            checkIfMatches(id)
+        }
+    }
 
     return (
         <div className="memoryContainer">
             {items.map((item, index) => (
-                <CardIndividual key={index} item={item} />
+                <CardIndividual
+                    key={index}
+                    item={item}
+                    //remember that the id here is the index, not the id we passed in the array bc needs to be unique
+                    id={index}
+                    handleClick={handleClick}
+                />
             ))}
         </div>
     )

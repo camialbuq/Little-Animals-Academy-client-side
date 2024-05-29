@@ -73,3 +73,25 @@ html,
         transform: scale(0);
     }
 }
+
+.card.active {
+    transform: rotateY(0);
+}
+
+.card.active img {
+    transform: scale(1);
+}
+
+.card.wrong {
+    /* background-color: rgb(237, 23, 23); */
+    border-color: rgb(237, 23, 23);
+    border-width: 6px;
+    box-sizing: border-box;
+}
+
+.card.correct {
+    /* background-color: rgb(45, 210, 90); */
+    border-color: rgb(45, 210, 90);
+    border-width: 6px;
+    box-sizing: border-box;
+}
