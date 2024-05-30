@@ -12,14 +12,14 @@ function EditForm() {
     const [image, setImage] = useState("")
     const [messageError, setMessageError] = useState("")
     const [messageSuccess, setMessageSuccess] = useState("")
-    const { storeToken } = useContext(AuthContext)
+    const { storeToken, user } = useContext(AuthContext)
 
     const handleSubmit = (e) => {
         e.preventDefault()
         const putData = async () => {
             try {
                 const response = await axios.put(
-                    "http://localhost:5005/api/users/:id",
+                    "http://localhost:5005/api/users/" + user._id,
                     {
                         name,
                         image,
@@ -48,7 +48,7 @@ function EditForm() {
     const deleteAccount = async () => {
         try {
             const response = await axios.delete(
-                "http://localhost:5005/api/users/:id",
+                "http://localhost:5005/api/users/" + user._id,
             )
             storeToken(response.data.authToken)
             navigate("/")

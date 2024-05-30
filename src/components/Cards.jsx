@@ -68,6 +68,7 @@ function Cards() {
     function handleRestart() {
         setItems(initialItems.sort(() => Math.random() - 0.5))
         setPrevSelected(-1)
+        window.location.reload()
     }
 
     return (
