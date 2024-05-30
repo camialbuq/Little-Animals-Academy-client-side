@@ -22,7 +22,7 @@ function Navbar() {
                     </h1>
                 </Link>
                 <nav className="z-10">
-                    <ul className="flex flex-row items-center rounded-lg bg-green-500 px-6 py-4 text-customDarkGreen md:text-lg lg:text-xl">
+                    <ul className="flex flex-row items-center rounded-lg bg-green-500 px-2 py-4 text-customDarkGreen md:text-lg lg:px-4 lg:text-xl">
                         <li className="mx-4 font-black hover:-translate-y-2 hover:rotate-3 hover:scale-110 hover:text-indigo-100">
                             <Link to="/" className="font-extrabold">
                                 Home

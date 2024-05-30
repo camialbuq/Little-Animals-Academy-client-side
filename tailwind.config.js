@@ -12,6 +12,7 @@ export default {
                 customGreen: "#015255",
                 customDarkGreen: "#032c2d",
                 customOrange: "#ff7245",
+                customPink: "#ff7269",
             },
             fontFamily: {
                 rem: "REM",

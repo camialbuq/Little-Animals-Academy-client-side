@@ -15,7 +15,7 @@ function Home({ signUp, login }) {
     const navigate = useNavigate()
 
     return (
-        <div className="HomeContent font-happyMonkey sm:overflow-hidden">
+        <div className="HomeContent font-happyMonkey overflow-x-hidden">
             <section
                 className="HeroBanner border-box relative border-y-8 border-y-green-500 bg-cover bg-center tracking-wider dark:bg-gray-100"
                 style={{ backgroundImage: `url(${backgroundImage})` }}
@@ -30,7 +30,7 @@ function Home({ signUp, login }) {
                         </span>
                         {""} with the fun animal friends!
                     </h1>
-                    <p className="z-50 mb-8 mt-8 rounded-md bg-white bg-opacity-80 px-8 py-4 text-lg text-indigo-800 drop-shadow-md md:mx-10 md:py-6 md:text-xl lg:bg-transparent lg:text-2xl">
+                    <p className="z-50 mb-8 mt-8 rounded-md bg-white bg-opacity-80 px-8 py-4 text-lg text-indigo-700 drop-shadow-md md:mx-10 md:py-6 md:text-xl lg:bg-transparent lg:text-2xl">
                         Help your little one to learn and improve cognition
                         using simple daily games.
                     </p>
