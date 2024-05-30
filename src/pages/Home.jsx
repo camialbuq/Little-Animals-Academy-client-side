@@ -20,9 +20,9 @@ function Home({ signUp, login }) {
                 className="HeroBanner border-box relative border-y-8 border-y-green-500 bg-cover bg-center tracking-wider dark:bg-gray-100"
                 style={{ backgroundImage: `url(${backgroundImage})` }}
             >
-                <div className="container mx-auto flex h-full flex-col items-center overflow-hidden px-4 pt-10 text-center md:px-10 md:pb-36 md:pt-24 lg:px-16 xl:max-w-4xl">
+                <div className="container mx-auto flex h-full flex-col items-center overflow-hidden px-4 pt-10 text-center md:px-10 md:pb-36 md:pt-24 lg:px-16 xl:max-w-5xl xl:text-4xl">
                     <AnimalsImageHome />
-                    <h1 className="text-3xl font-bold leading-none text-indigo-700 drop-shadow-md md:text-4xl">
+                    <h1 className="text-3xl font-bold leading-none text-indigo-700 drop-shadow-md md:text-4xl lg:text-5xl">
                         Play to learn the {""}
                         <span className="tracking-wider text-green-600">
                             alphabet, exercise your memory and start math
@@ -30,7 +30,7 @@ function Home({ signUp, login }) {
                         </span>
                         {""} with the fun animal friends!
                     </h1>
-                    <p className="z-50 mb-8 mt-8 rounded-md bg-white bg-opacity-80 px-8 py-4 text-lg text-indigo-800 drop-shadow-md md:mx-10 md:py-6 md:text-xl lg:bg-transparent">
+                    <p className="z-50 mb-8 mt-8 rounded-md bg-white bg-opacity-80 px-8 py-4 text-lg text-indigo-800 drop-shadow-md md:mx-10 md:py-6 md:text-xl lg:bg-transparent lg:text-2xl">
                         Help your little one to learn and improve cognition
                         using simple daily games.
                     </p>
