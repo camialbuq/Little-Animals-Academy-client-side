@@ -124,6 +124,14 @@ const initialItems = [
     { id: 9, img: "../../public/memoryCards/i.png", stat: "" },
     { id: 10, img: "../../public/memoryCards/j.png", stat: "" },
     { id: 10, img: "../../public/memoryCards/j.png", stat: "" },
+    { id: 11, img: "../../public/memoryCards/k.png", stat: "" },
+    { id: 11, img: "../../public/memoryCards/k.png", stat: "" },
+    { id: 12, img: "../../public/memoryCards/l.png", stat: "" },
+    { id: 12, img: "../../public/memoryCards/l.png", stat: "" },
+    { id: 13, img: "../../public/memoryCards/m.png", stat: "" },
+    { id: 13, img: "../../public/memoryCards/m.png", stat: "" },
+    { id: 14, img: "../../public/memoryCards/awesome.png", stat: "" },
+    { id: 14, img: "../../public/memoryCards/awesome.png", stat: "" },
 ]
 
 function Cards() {
@@ -171,6 +179,7 @@ function Cards() {
     function handleRestart() {
         setItems(initialItems.sort(() => Math.random() - 0.5))
         setPrevSelected(-1)
+        window.location.reload
     }
 
     return (

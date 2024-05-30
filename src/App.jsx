@@ -13,6 +13,7 @@ import Math from "./pages/Math"
 
 import IsPrivate from "./components/IsPrivate"
 import IsAnon from "./components/IsAnon"
+import NotFound from "./pages/NotFound"
 
 function App() {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false)
@@ -61,6 +62,7 @@ function App() {
                             </IsPrivate>
                         }
                     />
+                    <Route path="*" element={<NotFound />} />
                 </Routes>
                 <Footer />
             </div>
