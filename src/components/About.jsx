@@ -2,7 +2,7 @@ import React from "react"
 
 function About() {
     return (
-        <div className="relative overflow-hidden bg-white">
+        <div className="font-rem relative overflow-hidden bg-white">
             <div className="grid pb-16 pt-10 sm:grid-cols-1 sm:pb-40 sm:pt-24 md:grid-cols-2 lg:pb-20 lg:pt-40">
                 <div className="relative mx-auto max-w-7xl px-4 sm:static sm:px-6 lg:px-8">
                     <div className="sm:max-w-lg">

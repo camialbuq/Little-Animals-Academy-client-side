@@ -68,7 +68,7 @@ function EditForm() {
     }
 
     return (
-        <section className="Form w-1/2">
+        <section className="Form font-rem w-1/2">
             <div className="min-h-1/2 flex w-full flex-col justify-center bg-gray-100 px-6 py-12 lg:px-8">
                 <div className="sm:mx-auto sm:w-full sm:max-w-md">
                     <img

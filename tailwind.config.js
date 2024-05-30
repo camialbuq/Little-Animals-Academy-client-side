@@ -13,7 +13,11 @@ export default {
                 customDarkGreen: "#032c2d",
                 customOrange: "#ff7245",
             },
+            fontFamily: {
+                rem: "REM",
+                abz: "ABeeZee",
+            },
+            plugins: [],
         },
     },
-    plugins: [],
 }

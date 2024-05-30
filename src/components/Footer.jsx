@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 
 function Footer() {
     return (
-        <div className="bottom-0 flex w-full items-center justify-center bg-customOrange py-2 text-center text-base text-gray-50">
+        <div className="font-rem bottom-0 flex w-full items-center justify-center bg-customOrange py-2 text-center text-base text-gray-50">
             Little Animals Academy - Cami Albuquerque -{" "}
             <span>
                 <Link

@@ -14,39 +14,39 @@ function Navbar() {
     }
 
     return (
-        <div className="navbar">
+        <div className="navbar font-rem">
             <header className="mx-auto flex max-w-full flex-col items-center justify-between bg-customDarkGreen px-2 py-4 md:flex-row md:px-6">
                 <Link to="/" className="active z-10">
-                    <h1 className="text-2xl font-extrabold text-white active:text-customGreen">
-                        Little Animals Academy
+                    <h1 className="text-2xl font-extrabold tracking-wide text-white active:text-customGreen">
+                        LITTLE ANIMALS ACADEMY
                     </h1>
                 </Link>
                 <nav className="z-10">
-                    <ul className="flex flex-row items-center rounded-lg bg-green-500 px-6 py-4 text-indigo-100">
-                        <li className="mx-4 hover:-translate-y-2 hover:rotate-3 hover:scale-110 hover:text-customDarkGreen">
+                    <ul className="flex flex-row items-center rounded-lg bg-green-500 px-6 py-4 text-customDarkGreen">
+                        <li className="mx-4 hover:-translate-y-2 hover:rotate-3 hover:scale-110 hover:text-indigo-100">
                             <Link to="/" className="font-bold">
                                 Home
                             </Link>
                         </li>
-                        <li className="mx-4 hover:-translate-y-2 hover:-rotate-3 hover:scale-110 hover:text-customDarkGreen">
+                        <li className="mx-4 hover:-translate-y-2 hover:-rotate-3 hover:scale-110 hover:text-indigo-100">
                             <Link to="/profile" className="font-bold">
                                 Profile
                             </Link>
                         </li>
-                        <li className="mx-4 hover:-translate-y-2 hover:rotate-3 hover:scale-110 hover:text-customDarkGreen">
+                        <li className="mx-4 hover:-translate-y-2 hover:rotate-3 hover:scale-110 hover:text-indigo-100">
                             <Link to="/games" className="font-bold">
                                 Games
                             </Link>
                         </li>
                         {!isLoggedIn && (
-                            <li className="mx-4 hover:-translate-y-2 hover:-rotate-3 hover:scale-110 hover:text-customDarkGreen">
+                            <li className="mx-4 hover:-translate-y-2 hover:-rotate-3 hover:scale-110 hover:text-indigo-100">
                                 <Link to="/login" className="font-bold">
                                     Login
                                 </Link>
                             </li>
                         )}
                         {isLoggedIn && (
-                            <li className="mx-4 hover:-translate-y-2 hover:-rotate-3 hover:scale-110 hover:text-customDarkGreen">
+                            <li className="mx-4 hover:-translate-y-2 hover:-rotate-3 hover:scale-110 hover:text-indigo-100">
                                 <button
                                     onClick={handleLogout}
                                     className="font-bold"
