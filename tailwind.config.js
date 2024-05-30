@@ -16,6 +16,7 @@ export default {
             fontFamily: {
                 rem: "REM",
                 abz: "ABeeZee",
+                happyMonkey: "Happy Monkey",
             },
             plugins: [],
         },
