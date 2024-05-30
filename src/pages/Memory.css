@@ -11,7 +11,10 @@ html,
 
 .memoryApp {
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-    background-color: #015255;
+    /* background-color: #015255; */
+    background-image: url("../assets/greenTexture.png");
+    background-position: center;
+    background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;

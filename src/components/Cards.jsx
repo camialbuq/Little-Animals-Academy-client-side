@@ -68,10 +68,11 @@ function Cards() {
     function handleRestart() {
         setItems(initialItems.sort(() => Math.random() - 0.5))
         setPrevSelected(-1)
+        window.location.reload()
     }
 
     return (
-        <div className="gameContainer font-rem my-12 flex w-2/3 flex-col items-center justify-center rounded-xl bg-orange-200 bg-opacity-30 px-10">
+        <div className="gameContainer font-happyMonkey my-12 flex w-2/3 flex-col items-center justify-center rounded-xl bg-customDarkGreen bg-opacity-90 px-10">
             <h1 className="mt-8 text-xl font-bold text-white">
                 Find the cards with the animals that match :D
             </h1>

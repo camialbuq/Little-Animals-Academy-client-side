@@ -12,14 +12,14 @@ function EditForm() {
     const [image, setImage] = useState("")
     const [messageError, setMessageError] = useState("")
     const [messageSuccess, setMessageSuccess] = useState("")
-    const { storeToken } = useContext(AuthContext)
+    const { storeToken, user } = useContext(AuthContext)
 
     const handleSubmit = (e) => {
         e.preventDefault()
         const putData = async () => {
             try {
                 const response = await axios.put(
-                    "http://localhost:5005/api/users/:id",
+                    "http://localhost:5005/api/users/" + user._id,
                     {
                         name,
                         image,
@@ -48,7 +48,7 @@ function EditForm() {
     const deleteAccount = async () => {
         try {
             const response = await axios.delete(
-                "http://localhost:5005/api/users/:id",
+                "http://localhost:5005/api/users/" + user._id,
             )
             storeToken(response.data.authToken)
             navigate("/")
@@ -68,7 +68,7 @@ function EditForm() {
     }
 
     return (
-        <section className="Form font-rem w-1/2">
+        <section className="Form font-happyMonkey w-1/2">
             <div className="min-h-1/2 flex w-full flex-col justify-center bg-gray-100 px-6 py-12 lg:px-8">
                 <div className="sm:mx-auto sm:w-full sm:max-w-md">
                     <img
@@ -92,7 +92,7 @@ function EditForm() {
                             <div>
                                 <label
                                     htmlFor="name"
-                                    className="block text-sm font-medium text-gray-700"
+                                    className="block text-sm font-medium text-gray-700 md:text-lg"
                                 >
                                     Name
                                 </label>
@@ -116,7 +116,7 @@ function EditForm() {
                             <div>
                                 <label
                                     htmlFor="playerName"
-                                    className="block text-sm font-medium text-gray-700"
+                                    className="block text-sm font-medium text-gray-700 md:text-lg"
                                 >
                                     Player's name
                                 </label>
@@ -140,7 +140,7 @@ function EditForm() {
                             <div>
                                 <label
                                     htmlFor="image"
-                                    className="block text-sm font-medium text-gray-700"
+                                    className="block text-sm font-medium text-gray-700 md:text-lg"
                                 >
                                     Choose your animal image
                                 </label>
@@ -165,7 +165,7 @@ function EditForm() {
                                 <button
                                     type="submit"
                                     // onClick={() => navigate("/games")}
-                                    className="flex w-full justify-center rounded-md border border-transparent bg-green-500 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                                    className="flex w-full justify-center rounded-md border border-transparent bg-green-500 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 md:text-lg lg:text-xl"
                                 >
                                     Change
                                 </button>
@@ -190,14 +190,14 @@ function EditForm() {
 
                     <button
                         onClick={() => deleteAccount()}
-                        className="mt-4 active:underline active:underline-offset-4 sm:mx-auto sm:w-full sm:max-w-md"
+                        className="mt-4 active:underline active:underline-offset-4 sm:mx-auto sm:w-full sm:max-w-md md:text-base"
                     >
                         Delete your user account :(
                     </button>
 
                     <button
                         onClick={() => navigate("/")}
-                        className="mt-4 active:underline active:underline-offset-4 sm:mx-auto sm:w-full sm:max-w-md"
+                        className="mt-4 active:underline active:underline-offset-4 sm:mx-auto sm:w-full sm:max-w-md md:text-lg"
                     >
                         Close
                     </button>

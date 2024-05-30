@@ -14,7 +14,7 @@ function Sidebar() {
     }
 
     return (
-        <div className="sidebar w-full bg-orange-300 p-3 text-base text-customDarkGreen">
+        <div className="sidebar font-happyMonkey w-full bg-orange-300 p-3 text-base text-customDarkGreen">
             <div className="flex flex-row items-center justify-center space-x-8">
                 <ul className="flex flex-row space-x-8">
                     <li>

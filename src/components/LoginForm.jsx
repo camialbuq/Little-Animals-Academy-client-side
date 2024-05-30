@@ -38,7 +38,7 @@ function LoginForm() {
     }
 
     return (
-        <section className="Form font-rem w-1/2">
+        <section className="Form font-happyMonkey w-1/2">
             <div className="min-h-1/2 flex w-full flex-col justify-center bg-gray-100 px-6 py-12 lg:px-8">
                 <div className="sm:mx-auto sm:w-full sm:max-w-md">
                     <img
@@ -49,7 +49,7 @@ function LoginForm() {
                     <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
                         Login to start playing!
                     </h2>
-                    <p className="max-w mt-2 text-center text-sm text-gray-600">
+                    <p className="max-w mt-2 text-center text-sm text-gray-600 lg:text-lg">
                         No account yet? {""}
                         <a
                             href="/login"
@@ -71,7 +71,7 @@ function LoginForm() {
                             <div>
                                 <label
                                     htmlFor="email"
-                                    className="block text-sm font-medium text-gray-700"
+                                    className="block text-sm font-medium text-gray-700 lg:text-lg"
                                 >
                                     Email
                                 </label>
@@ -96,7 +96,7 @@ function LoginForm() {
                             <div>
                                 <label
                                     htmlFor="password"
-                                    className="block text-sm font-medium text-gray-700"
+                                    className="block text-sm font-medium text-gray-700 lg:text-lg"
                                 >
                                     Password
                                 </label>
@@ -121,7 +121,7 @@ function LoginForm() {
                                 <button
                                     type="submit"
                                     // onClick={() => navigate("/games")}
-                                    className="flex w-full justify-center rounded-md border border-transparent bg-green-500 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                                    className="flex w-full justify-center rounded-md border border-transparent bg-green-500 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 md:text-lg lg:text-xl"
                                 >
                                     Login
                                 </button>

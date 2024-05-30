@@ -15,29 +15,29 @@ function Home({ signUp, login }) {
     const navigate = useNavigate()
 
     return (
-        <div className="HomeContent font-rem">
+        <div className="HomeContent font-happyMonkey">
             <section
-                className="HeroBanner border-box relative border-y-8 border-y-green-500 bg-cover bg-center dark:bg-gray-100"
+                className="HeroBanner border-box relative border-y-8 border-y-green-500 bg-cover bg-center tracking-wider dark:bg-gray-100"
                 style={{ backgroundImage: `url(${backgroundImage})` }}
             >
-                <div className="container mx-auto flex h-full flex-col items-center overflow-hidden px-4 pt-10 text-center md:px-10 md:pb-36 md:pt-24 lg:px-20 xl:max-w-3xl">
+                <div className="container mx-auto flex h-full flex-col items-center overflow-hidden px-4 pt-10 text-center md:px-10 md:pb-36 md:pt-24 lg:px-20 xl:max-w-4xl">
                     <AnimalsImageHome />
-                    <h1 className="font-rem text-4xl font-bold leading-none text-indigo-700 sm:text-5xl">
+                    <h1 className="text-4xl font-bold leading-none text-indigo-700 drop-shadow-md sm:text-5xl">
                         Play to learn the {""}
-                        <span className="dark:text-green-600">
+                        <span className="tracking-wider text-green-600">
                             alphabet, exercise your memory and start math
                             operations
                         </span>
                         {""} with the fun animal friends!
                     </h1>
-                    <p className="z-50 mb-8 mt-8 px-8 text-lg text-indigo-800 lg:text-xl">
+                    <p className="z-50 mb-8 mt-8 px-8 text-lg text-indigo-800 drop-shadow-md lg:text-xl">
                         Help your little one to learn and improve cognition
                         using simple daily games.
                     </p>
                     <div className="flex flex-col flex-wrap justify-center">
                         <button
                             onClick={() => navigate("/signup")}
-                            className="mb-8 rounded bg-orange-500 px-10 py-4 text-lg font-semibold text-white hover:-translate-y-3 hover:rotate-3 hover:scale-110 lg:text-2xl"
+                            className="mb-8 rounded bg-orange-500 px-10 py-4 text-lg font-semibold text-white drop-shadow-md hover:-translate-y-3 hover:rotate-3 hover:scale-110 lg:text-2xl"
                         >
                             Get started
                         </button>

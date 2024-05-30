@@ -45,7 +45,7 @@ function SignUpForm() {
     }
 
     return (
-        <section className="Form w-1/2">
+        <section className="Form font-happyMonkey w-1/2">
             <div className="min-h-1/2 flex w-full flex-col justify-center bg-gray-100 px-6 py-12 lg:px-8">
                 <div className="sm:mx-auto sm:w-full sm:max-w-md">
                     <img
@@ -56,11 +56,11 @@ function SignUpForm() {
                     <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
                         Create your account
                     </h2>
-                    <p className="max-w mt-2 text-center text-sm text-gray-600">
+                    <p className="max-w mt-2 text-center text-sm text-gray-600 lg:text-lg">
                         Already registered? {""}
                         <a
                             href="/login"
-                            className="font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                            className="font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 lg:text-lg"
                         >
                             Login
                         </a>
@@ -78,7 +78,7 @@ function SignUpForm() {
                             <div>
                                 <label
                                     htmlFor="name"
-                                    className="block text-sm font-medium text-gray-700"
+                                    className="block text-sm font-medium text-gray-700 lg:text-lg"
                                 >
                                     Name
                                 </label>
@@ -102,7 +102,7 @@ function SignUpForm() {
                             <div>
                                 <label
                                     htmlFor="email"
-                                    className="block text-sm font-medium text-gray-700"
+                                    className="block text-sm font-medium text-gray-700 lg:text-lg"
                                 >
                                     Email
                                 </label>
@@ -127,7 +127,7 @@ function SignUpForm() {
                             <div>
                                 <label
                                     htmlFor="password"
-                                    className="block text-sm font-medium text-gray-700"
+                                    className="block text-sm font-medium text-gray-700 lg:text-lg"
                                 >
                                     Password
                                 </label>
@@ -150,7 +150,7 @@ function SignUpForm() {
                             <div>
                                 <label
                                     htmlFor="playerName"
-                                    className="block text-sm font-medium text-gray-700"
+                                    className="block text-sm font-medium text-gray-700 lg:text-lg"
                                 >
                                     Player's name
                                 </label>
@@ -174,7 +174,7 @@ function SignUpForm() {
                             <div>
                                 <button
                                     type="submit"
-                                    className="flex w-full justify-center rounded-md border border-transparent bg-green-500 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                                    className="flex w-full justify-center rounded-md border border-transparent bg-green-500 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 md:text-lg lg:text-xl"
                                 >
                                     Sign up
                                 </button>
