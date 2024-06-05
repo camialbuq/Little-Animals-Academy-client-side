@@ -12,7 +12,7 @@ import texture02 from "../assets/5452709.jpg"
 import texture03 from "../assets/5510579.jpg"
 
 // Import the string from the .env with URL of the API/server - http://localhost:5005
-const API_URL = import.meta.env.VITE_API_URL
+const API_URL = import.meta.env.MONGODB_URI
 
 function UserProfile() {
     const [userProfile, setUserProfile] = useState(null)
@@ -64,7 +64,7 @@ function UserProfile() {
     const randomImage = getRandomHeaderImage()
 
     return (
-        <section class="font-happyMonkey w-full overflow-hidden">
+        <section class="w-full overflow-hidden font-happyMonkey">
             <div class="mx-auto w-full">
                 <img
                     src={randomImage}

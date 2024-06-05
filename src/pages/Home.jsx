@@ -17,10 +17,10 @@ function Home({ signUp, login }) {
     return (
         <div className="HomeContent font-happyMonkey overflow-x-hidden">
             <section
-                className="HeroBanner border-box relative border-y-8 border-y-green-500 bg-cover bg-center tracking-wider dark:bg-gray-100"
+                className="HeroBanner border-box relative border-y-8 border-y-green-500 bg-cover bg-center tracking-wider xl:h-5/6 dark:bg-gray-100"
                 style={{ backgroundImage: `url(${backgroundImage})` }}
             >
-                <div className="container mx-auto flex h-full flex-col items-center overflow-hidden px-4 pt-10 text-center md:px-10 md:pb-36 md:pt-24 lg:px-16 xl:max-w-5xl xl:text-4xl">
+                <div className=" container mx-auto flex flex-col items-center overflow-hidden px-4 pt-10 text-center md:px-10 md:pb-36 md:pt-24 lg:px-16 xl:mt-40 xl:w-2/3 xl:text-5xl">
                     <AnimalsImageHome />
                     <h1 className="text-3xl font-bold leading-none text-indigo-700 drop-shadow-md md:text-4xl lg:text-5xl">
                         Play to learn the {""}

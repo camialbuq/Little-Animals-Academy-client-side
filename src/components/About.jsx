@@ -81,7 +81,9 @@ function About() {
                                 This is a single user application project built
                                 with React. It uses{" "}
                                 <span className="font-bold text-indigo-500">
-                                    html, TailwindCSS, Javascript and NodeJS.
+                                    html, TailwindCSS and Javascript. The
+                                    backend is done with NodeJS and ExpressJS,
+                                    authentication with JWT.
                                 </span>{" "}
                                 Developed as part of Software Dev Bootcamp -
                                 Ironhack Berlin.
